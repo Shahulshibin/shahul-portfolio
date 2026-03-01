@@ -164,7 +164,9 @@ body {
     border-color: var(--accent);
 }
 
-/* PROJECTS */
+
+
+/* PROJECTS 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -197,6 +199,134 @@ body {
 .project-card:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: var(--accent);
+}
+    */
+    /* =========================
+   PROJECTS SECTION (CLEAN & PROFESSIONAL)
+========================= */
+
+/* Projects Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+/* Project Card Base */
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Project Title */
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+/* Project Description */
+.project-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+
+/* Project Link Button */
+.project-card a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent);
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 10; /* Ensures link is always clickable */
+}
+
+/* Link Hover (Subtle) */
+.project-card a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* SUBTLE HOVER EFFECT (Balanced - Not Too Much) */
+.project-card:hover {
+    transform: translateY(-4px); /* Reduced from -10px */
+    border-color: var(--accent);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+/* Optional Soft Glow Accent (Very Light) */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(120deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevents click blocking */
+}
+
+.project-card:hover::before {
+    opacity: 0.15; /* Very subtle glow */
+}
+
+/* FILTER BUTTONS (If you are using filters) */
+.filter-buttons {
+    margin: 20px 0 35px 0;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 9px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+/* Responsive Optimization */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+    }
 }
 
 /* CONTACT */
@@ -242,6 +372,9 @@ body {
 .project-card:hover::before {
     opacity: 1;
 }
+
+
+
 /* TIMELINE */
 .timeline {
     border-left: 2px solid var(--accent);
